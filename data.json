@@ -1,7 +1,20 @@
 [
-	{"title":"Home"}, 
-	{"title":"Home"}, 
-	{"title":"Home"}, 
-	{"title":"Home"}, 
-	{"title":"Home"}, 
+	{"title":"Download", "class":"download"}, 
+	{"title":"Heart", "class":"heart"}, 
+	{"title":"Comments", "class":"comments"}, 
+	{"title":"Cubes", "class":"cubes"}, 
+	{"title":"Road", "class":"road",
+		"subs":[
+			{"title":"Introduction"},
+			{"title":"QuickStart"},
+			{"title":"Installing Hugo"}
+		]
+	}, 
+	{"title":"Road", "class":"road",
+		"subs":[
+			{"title":"Introduction"},
+			{"title":"QuickStart"},
+			{"title":"Installing Hugo"}
+		]
+	}
 ]
