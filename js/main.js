@@ -1,8 +1,8 @@
 require.config({
 	paths:{
-		"zepto": "../lib/zepto",
-		'event': '../lib/event',
-		'ajax': "../lib/ajax"
+		"zepto": "./lib/zepto",
+		'event': './lib/event',
+		'ajax': "./lib/ajax"
 	},
 
 	shim: {
