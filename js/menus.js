@@ -74,7 +74,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 		if( level === 1 && idx === 0 ){
 			$li.addClass('item-first');
 		}
-		var $a = $('<a href="javascript:void(0);"></a>');
+		var $a = $('<a href="' + (data.href || "javascript:void(0);" ) + '" target="' + ( data.target || "_blank" )  + '"> </a>');
 		var $span = $('<span>' + data.title + '</span>');
 		$span.addClass( _settings.itemTKlass );
 		if( level === 1 ){

@@ -1,34 +1,34 @@
 [
-	{"title":"Download", "class":"download"}, 
-	{"title":"Heart", "class":"heart"}, 
-	{"title":"Comments", "class":"comments"}, 
-	{"title":"Cubes", "class":"cubes"}, 
+	{"title":"Download", "class":"download", "href": "./blog.html", "target":"mainCnt"}, 
+	{"title":"Heart", "class":"heart","href": "./blog.html", "target":"mainCnt"}, 
+	{"title":"Comments", "class":"comments", "href": "./blog.html", "target":"mainCnt"}, 
+	{"title":"Cubes", "class":"cubes", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Road", "class":"road",
 		"subs":[
-			{"title":"Introduction"},
-			{"title":"QuickStart"},
-			{"title":"Installing Hugo"}
+			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
+			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
+			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
 		]
 	}, 
 	{"title":"Daily", "class":"road",
 		"subs":[
-			{"title":"Introduction"},
-			{"title":"QuickStart"},
-			{"title":"Installing Hugo"}
+			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
+			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
+			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
 		]
 	},
 		{"title":"BootStrap", "class":"road",
 		"subs":[
-			{"title":"Introduction"},
-			{"title":"QuickStart"},
-			{"title":"Installing Hugo"}
+			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
+			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
+			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
 		]
 	},
 		{"title":"React", "class":"road",
 		"subs":[
-			{"title":"Introduction"},
-			{"title":"QuickStart"},
-			{"title":"Installing Hugo"}
+			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
+			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
+			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
 		]
 	}
 ]

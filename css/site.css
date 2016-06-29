@@ -4,6 +4,7 @@ html,body, div,ul,li{
 }
 
 
+
 .border-right{
 	padding-right:0px;
 	border-right: 1px solid #D7D7D7;
@@ -18,6 +19,29 @@ html, body,.one-row{
 body{
 	overflow-x: hidden;
 }
+
+.content{
+	height:100%;
+	overflow-y: auto;
+	padding: 0;
+}
+
+#mainContent{
+	border:0;
+	width:100%;
+	height: 98%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 1000px){
@@ -34,6 +58,7 @@ body{
 	.navbar-collapse{
 		position: absolute;
 		z-index: 1000;
+		background-color: #fff;
 	}
 
 	.col-sm-3{
