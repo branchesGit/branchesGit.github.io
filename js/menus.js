@@ -177,7 +177,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 				$ul.removeClass("hidden");
 				$ul.css({"height": 0});
 				var h = $ul.find('li').length * 36;
-				$ul.animate({"height": h + 'px'}, 400, 'ease', function(){
+				$ul.animate({ "height": h + 'px'}, 300, 'ease-out', function(){
 					$ul.css({"height": "auto"});
 				})
 
@@ -192,8 +192,8 @@ define(['zepto', 'ajax', 'fx'], function($){
 				$li.data("close", '1');
 				var h = $ul.find("li").length * 36;
 				$ul.css( {'height': h + 'px'} );
-				$ul.animate({"height":0}, 400, 'ease', function(){
-					$ul.addClass("hidden");
+				$ul.animate({"height":0}, 300, 'ease-out', function(){
+					//$ul.addClass("hidden");
 				})
 
 				if( parseInt( $li.data('sub-select'), 10) === 1 ){

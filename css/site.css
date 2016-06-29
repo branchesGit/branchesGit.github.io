@@ -19,6 +19,13 @@ body{
 	overflow-x: hidden;
 }
 
+
+@media (max-width: 1000px){
+	.col-sm-3{
+		min-width: 270px;
+	}
+}
+
 @media (max-width: 768px){
 	.one-row{
 		height: auto;
@@ -27,6 +34,10 @@ body{
 	.navbar-collapse{
 		position: absolute;
 		z-index: 1000;
+	}
+
+	.col-sm-3{
+		min-width: 240px;
 	}
 }
 

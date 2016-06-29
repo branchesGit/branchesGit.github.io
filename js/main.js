@@ -1,4 +1,4 @@
-jQuery.noConflict();
+jQuery && jQuery.noConflict();
 
 require.config({
 	paths:{

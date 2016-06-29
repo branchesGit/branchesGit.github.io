@@ -8,6 +8,10 @@ li,dl{list-style:none;}
 	width:100%;
 }
 
+.branches-menu ul{
+	overflow: hidden;
+}
+
 .branches-menu .hidden{
 	display:none;
 }
