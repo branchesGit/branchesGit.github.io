@@ -50,7 +50,7 @@ li.item-open a{
 .item a:hover, 
 .item a.select,
 .sub-select-close > a{
-	color:#ff4088;
+	color:#ff4088!important;
 	border-bottom-color:#ff4088;
 	background-color: #eee;
 }
