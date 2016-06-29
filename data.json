@@ -10,7 +10,21 @@
 			{"title":"Installing Hugo"}
 		]
 	}, 
-	{"title":"Road", "class":"road",
+	{"title":"Daily", "class":"road",
+		"subs":[
+			{"title":"Introduction"},
+			{"title":"QuickStart"},
+			{"title":"Installing Hugo"}
+		]
+	},
+		{"title":"BootStrap", "class":"road",
+		"subs":[
+			{"title":"Introduction"},
+			{"title":"QuickStart"},
+			{"title":"Installing Hugo"}
+		]
+	},
+		{"title":"React", "class":"road",
 		"subs":[
 			{"title":"Introduction"},
 			{"title":"QuickStart"},

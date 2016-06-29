@@ -18,7 +18,9 @@ define(['zepto', 'ajax', 'fx'], function($){
 		itemTKlass: 'menu-title',
 		selectLevel: "1",
 		selectIndex:"1",
-		openItem: null
+		openItem: null,
+		closeKlass: 'item-colse',
+		openItemKlass: 'item-open'
 	};
 
 	$.fn.Menus = function( options ){
@@ -52,6 +54,8 @@ define(['zepto', 'ajax', 'fx'], function($){
 
 		if( level !== 1 ){
 			$ul.addClass( _settings.hidden );
+		} else {
+			$ul.addClass("nav navbar-nav");
 		}
 
 		$.each( datas, function( idx,data ){
@@ -67,6 +71,9 @@ define(['zepto', 'ajax', 'fx'], function($){
 			 .data("index", idx)
 			 .addClass(_settings.itemKlass);
 
+		if( level === 1 && idx === 0 ){
+			$li.addClass('item-first');
+		}
 		var $a = $('<a href="javascript:void(0);"></a>');
 		var $span = $('<span>' + data.title + '</span>');
 		$span.addClass( _settings.itemTKlass );
@@ -112,7 +119,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 	
 		if( iClose !== undefined ){
 			
-			$item.removeClass('open').addClass('close');
+			$item.removeClass(_settings.openItemKlass).addClass(_settings.closeKlass);
 			$item.data('close','1');
 			$item.find("ul").addClass('hidden');
 
@@ -165,7 +172,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 			var $ul = $li.find("ul");
 
 			if( iClose === 1 ){
-				$li.removeClass("close").addClass("open");
+				$li.removeClass(_settings.closeKlass).addClass(_settings.openItemKlass);
 				$li.data("close", '0');
 				$ul.removeClass("hidden");
 				$ul.css({"height": 0});
@@ -181,7 +188,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 				_settings.openItem = $li;
 
 			} else if(iClose === 0) {
-				$li.removeClass("open").addClass("close");
+				$li.removeClass(_settings.openItemKlass).addClass(_settings.closeKlass);
 				$li.data("close", '1');
 				var h = $ul.find("li").length * 36;
 				$ul.css( {'height': h + 'px'} );

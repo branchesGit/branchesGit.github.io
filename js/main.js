@@ -1,3 +1,5 @@
+jQuery.noConflict();
+
 require.config({
 	paths:{
 		"zepto": "./lib/zepto",
@@ -28,6 +30,6 @@ require.config({
 
 require(["menus"], function(){
 	$(function(){
-		$(".menus").Menus()
+		$("#navbar-collapse").Menus()
 	});
 });

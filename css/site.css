@@ -1,0 +1,32 @@
+html,body, div,ul,li{
+	margin:0;
+	padding:0;
+}
+
+
+.border-right{
+	padding-right:0px;
+	border-right: 1px solid #D7D7D7;
+	height:100%;
+	background-color: #eee;
+}
+
+html, body,.one-row{
+	height: 100%;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+@media (max-width: 768px){
+	.one-row{
+		height: auto;
+	}
+
+	.navbar-collapse{
+		position: absolute;
+		z-index: 1000;
+	}
+}
+

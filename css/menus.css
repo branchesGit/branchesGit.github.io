@@ -1,25 +1,26 @@
-html,body, div,ul,li{
-	margin:0;
-	padding:0;
-}
-
-body{
-	max-width: 1024px;
-	margin-right:auto;
-	margin-left:auto;
-}
-
 li,dl{list-style:none;}
 
 .branches-menu{
-	overflow: hidden;
-	max-width: 240px;
+	overflow: hidden!important;
+}
+
+.nav{
+	width:100%;
 }
 
 .branches-menu .hidden{
 	display:none;
 }
 
+.branches-menus a:active, .branches-menus a:focus{
+	border-left:0;
+}
+
+
+.item{
+	min-width: 240px;
+	width:100%;
+}
 
 .item a {
 	display: inline-block;
@@ -27,7 +28,8 @@ li,dl{list-style:none;}
 	color: #72767D;
 	border: 1px solid #D7D7D7;
 	border-top: 0;
-	width:238px;
+	border-right:0;
+	width:100%;
 	line-height: 36px;
 	min-height: 36px;
 	position: relative;
@@ -36,14 +38,14 @@ li,dl{list-style:none;}
 
 }
 
-.open>a{
-	color:#ff4088 ;
+.item-first a{
+	border-top: 1px solid #D7D7D7;
 }
 
-li.open a{
+
+li.item-open a{
 	background-color: #eee;
 }
-
 
 .item a:hover, 
 .item a.select,
@@ -52,6 +54,12 @@ li.open a{
 	border-bottom-color:#ff4088;
 	background-color: #eee;
 }
+
+.item-open>a{
+	color:#ff4088!important ;
+	background-color: #eee;
+}
+
 
 .item .menu-title{
 	margin-left: 24px;
@@ -81,7 +89,7 @@ i.menu-icon{
 	content: "\f105";
 }
 
-.open .right:before{
+.item-open .right:before{
 	content: "\f107";
 }
 
