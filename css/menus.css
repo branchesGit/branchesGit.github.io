@@ -20,9 +20,6 @@ li,dl{list-style:none;}
 	display:none;
 }
 
-.branches-menu .item{
-
-}
 
 .item a {
 	display: inline-block;
@@ -35,15 +32,18 @@ li,dl{list-style:none;}
 	min-height: 36px;
 	position: relative;
 	transition: all 0.2s ease-out;
+	background-color: #fff;
+
 }
 
 .open>a{
 	color:#ff4088 ;
 }
 
-li.open{
+li.open a{
 	background-color: #eee;
 }
+
 
 .item a:hover, 
 .item a.select,

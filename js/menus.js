@@ -2,7 +2,7 @@
 	AMD: 异步加载
 */
 
-define(['zepto', 'ajax'], function($){
+define(['zepto', 'ajax', 'fx'], function($){
 	//配置信息
 	var _settings = {
 		mutils:false,
@@ -97,12 +97,20 @@ define(['zepto', 'ajax'], function($){
 		})
 	}
 
-	var _closeSubMenu = function( iClose ){
+	var _closeSubMenu = function( iClose, $openLi ){
 		//关闭展开项
 		var $item = _settings.openItem;
 		
-		//console.log( $item, iClose);
-		if( iClose !== undefined && $item ){
+		if( !$item ){
+			return;
+		}
+
+		if( $openLi.data('level') === $item.data('level') && 
+			$openLi.data('index') === $item.data('index') ){
+			return;
+		}
+	
+		if( iClose !== undefined ){
 			
 			$item.removeClass('open').addClass('close');
 			$item.data('close','1');
@@ -126,7 +134,7 @@ define(['zepto', 'ajax'], function($){
 				iClose = $li.data("close"),
 				$parentLi;
 
-			_closeSubMenu(iClose);
+			_closeSubMenu(iClose, $li);
 
 			if( iClose === undefined && (level !== _settings.selectLevel 
 				|| index !== _settings.selectIndex) ){
@@ -160,6 +168,11 @@ define(['zepto', 'ajax'], function($){
 				$li.removeClass("close").addClass("open");
 				$li.data("close", '0');
 				$ul.removeClass("hidden");
+				$ul.css({"height": 0});
+				var h = $ul.find('li').length * 36;
+				$ul.animate({"height": h + 'px'}, 400, 'ease', function(){
+					$ul.css({"height": "auto"});
+				})
 
 				if( parseInt( $li.data('sub-select'), 10) === 1 ){
 					$li.removeClass('sub-select-close');
@@ -170,7 +183,11 @@ define(['zepto', 'ajax'], function($){
 			} else if(iClose === 0) {
 				$li.removeClass("open").addClass("close");
 				$li.data("close", '1');
-				$ul.addClass("hidden");
+				var h = $ul.find("li").length * 36;
+				$ul.css( {'height': h + 'px'} );
+				$ul.animate({"height":0}, 400, 'ease', function(){
+					$ul.addClass("hidden");
+				})
 
 				if( parseInt( $li.data('sub-select'), 10) === 1 ){
 					$li.addClass('sub-select-close');

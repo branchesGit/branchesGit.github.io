@@ -2,7 +2,8 @@ require.config({
 	paths:{
 		"zepto": "./lib/zepto",
 		'event': './lib/event',
-		'ajax': "./lib/ajax"
+		'ajax': "./lib/ajax",
+		'fx': './lib/fx'
 	},
 
 	shim: {
@@ -15,6 +16,10 @@ require.config({
 		},
 		'ajax': {
 			'deps': ['zepto','event'],
+			'exports': '$'
+		},
+		'fx':{
+			'deps':['zepto','event'],
 			'exports': '$'
 		}
 	}
