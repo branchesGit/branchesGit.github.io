@@ -5,8 +5,22 @@
 	<title>Gulp</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="./css/blog.css">
 </head>
 <body>
-	
+	<h1>入门指南</h1>
+	<h3>1，全局安装gulp：</h3>
+	<pre>$ npm install --global gulp</pre>
+	<h3>2，作为项目的开发依赖（devDependencies）安装gulp：</h3>
+	<pre>$ npm install --save-dev gulp</pre>
+	<h3>3，在项目的根目录下创建一个名为gulpfile.js的文件：</h3>
+		<pre>var gulp = require('gulp');
+gulp.task('default',function(){
+  //将你的默认的任务代码放在这
+});</pre>
+	<h3>4，运行gulp：</h3>
+	<pre>$ gulp taskName</pre>
+	<p>默认的名为default的任务（task）将会被运行，在这里，这个任务并未做任何事情</p>
+	<p>关于gulp的API，请看<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank">这里</a>。</p>
 </body>
 </html>

@@ -1,0 +1,45 @@
+html,body,ul,p,div,li, h1,h2,h3,h4,h5,h6{
+	padding:0;
+	margin:0;
+}
+
+body{
+	overflow-x: hidden;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	font: normal 10px/1  '微软雅黑', 'sans-serif', 'Courier New';
+}
+
+h1, h2,h3,h4,h5,h6{
+	font-weight: normal;
+	margin: 1rem 0;
+	letter-spacing: 0.06rem;
+}
+
+h1{
+	font-size: 1.28rem;
+}
+
+h3{
+	font-size: 1.02rem;
+}
+
+p{
+	margin: 0.6rem 0;
+	font-size: 0.9rem;
+	letter-spacing: 0.06rem;
+}
+
+pre{
+	background-color: #000;
+	color: #fff;
+	display: block;
+	padding: 1rem;
+	font-size: 1rem;
+	font-family: 'courier new';
+}
+
+a{
+	cursor: pointer;
+}
