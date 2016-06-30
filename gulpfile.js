@@ -3,16 +3,12 @@ var gulp = require( 'gulp' );
 //清除
 var clean = require('gulp-clean');
 //合并文件
-var concat  = require('gulp-concat');
+//var concat  = require('gulp-concat');
 //压缩
 var uglify = require('gulp-uglify');
 //
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
-
-//第三方库
-var Q = require('q');
-
 
 //var gulpSequence = require('gulp-sequence');
 
