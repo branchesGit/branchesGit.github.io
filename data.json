@@ -1,5 +1,5 @@
 [
-	{"title":"Download", "class":"download", "href": "./blog.html", "target":"mainCnt"}, 
+	{"title":"Gulp", "class":"download", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Heart", "class":"heart","href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Comments", "class":"comments", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Cubes", "class":"cubes", "href": "./blog.html", "target":"mainCnt"}, 

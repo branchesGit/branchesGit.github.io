@@ -22,5 +22,50 @@ gulp.task('default',function(){
 	<pre>$ gulp taskName</pre>
 	<p>默认的名为default的任务（task）将会被运行，在这里，这个任务并未做任何事情</p>
 	<p>关于gulp的API，请看<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank">这里</a>。</p>
+	<h1 class="border-b">开始一步步来使用gulp:</h1>
+	<ul class="branches-list">
+		<li>1，<a href="#stepOne">清空发布目录</a></li>
+		<li>2，<a href="#stepTwo">压缩JS</a></li>
+		<li>3，<a href="#stepThree">监听JS改变</a></li>
+	</ul>
+
+	<p><em>这里使用的requireJS，并没有进行JS，CSS合并到某一文件，目前还不知道如何解决合并问题！</em></p>
+	<div id="stepOne" class="step">
+		<p>1，这里使用的是gulp-clean插件，来清空发布目录<p>
+		<pre>var gulp = require('gulp');
+var clean = require('gulp-clean');
+gulp.task('clean',function(){
+  return gulp.src('./dist').pipe( clean() );
+});</pre>
+	</div>
+	<div id="stepTwo" class="step">
+		<p>2，这里使用的是gulp-uglify插件</p>
+		<pre>//压缩第三方库
+gulp.task('compressLibJS', function(){
+  return gulp.src('./js/lib/*.js')
+    //.pipe( concat("zepto.min.js") )
+    .pipe( uglify() )
+    .pipe( gulp.dest('./dist/lib') )
+});
+
+//压缩客户端JS
+gulp.task('compressClientJS', function(){
+  return gulp.src('./js/*.js')
+    .pipe( uglify() )
+    .pipe( gulp.dest('./dist') );
+});
+
+gulp.task('compressJS', [ 'clean' ], function(){
+  gulp.run( ['compressLibJS', 'compressClientJS' ] );
+});</pre>
+	</div>
+	<div id="stepThree" class="step">
+		<p>3，监听JS的change，这里自然就会用到了gulp.watch()API了</p>
+		<pre>var watcher = gulp.watch('./js/*.js', ['compressJS']);
+  watcher.on('change', function(event) {
+  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+});</pre>
+	<p>这段代码，你发现放在哪个任务里，哪个任务就一直停在那里等着，监听chnage事件这里借助插件browser-sync</p>
+	</div>
 </body>
 </html>

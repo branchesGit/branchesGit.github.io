@@ -32,6 +32,7 @@ define(['zepto', 'ajax', 'fx'], function($){
 
 	}; 
 
+
 	function _handleMenu(){
 		var data = _settings.oData,
 			$elem = _settings.$elem;
@@ -233,4 +234,5 @@ define(['zepto', 'ajax', 'fx'], function($){
 		});
 	};
 
+	console.log('test')
 });

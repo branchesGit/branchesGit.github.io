@@ -8,8 +8,26 @@ body{
 	width: 90%;
 	margin-right: auto;
 	margin-left: auto;
-	font: normal 10px/1  '微软雅黑', 'sans-serif', 'Courier New';
+	font: normal 10px/1  '宋体','微软雅黑', 'sans-serif', 'Courier New';
+	font-size: 0.95rem;
 }
+
+ul, ol, li, dl{
+	list-style: none;
+}
+
+li{
+	margin: 0.6rem 0;
+}
+
+a,a:hover, a:active,a:visited{
+	text-decoration: none;
+}
+
+a:hover, a:active, a:visited{
+	color:#333;
+}
+
 
 h1, h2,h3,h4,h5,h6{
 	font-weight: normal;
@@ -42,4 +60,55 @@ pre{
 
 a{
 	cursor: pointer;
+}
+
+.step{
+	margin-top: 1.6rem;
+	border-top: 2px dotted #e46997;
+}
+
+em{
+	display: block;
+	padding: 1rem 0 1rem 1rem;
+	border: 1px dotted #333;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: #e46997;
+}
+
+em:before{
+	content: "注意：";
+}
+
+.border-b{
+	border: 1px dotted #333;
+	padding: 1rem 0 1rem 1rem;
+	margin-left: -0.6rem;
+	color: #ff4088;
+}
+
+.branches-list a{
+	position: relative;
+	overflow: hidden;
+	padding: 0.2rem 0;
+}
+
+.branches-list a:before{
+	transition: transform 0.2s ease-out; //cubic-bezier(0.7,0,0.3,1);
+	content: "";
+	background: #ff4088;	
+	height: 2px;
+	width:100%;
+	position: absolute;
+	left:0;
+	bottom: 0.1rem;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+.branches-list a:hover:before{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	bottom:0.1rem;
 }

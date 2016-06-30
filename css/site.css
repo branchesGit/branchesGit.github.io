@@ -12,7 +12,7 @@ html,body, div,ul,li{
 	background-color: #eee;
 }
 
-html, body,.one-row{
+html, body{
 	height: 100%;
 }
 
@@ -22,39 +22,31 @@ body{
 
 .content{
 	height:100%;
-	overflow-y: auto;
 	padding: 0;
+	overflow-y: scroll;
 }
 
 #mainContent{
 	border:0;
 	width:100%;
-	height: 98%;
+	height: 99%;
+	overflow-x: hidden;
+
 }
 
 
+@media (min-width: 768px){
+	
+	.one-row{
+		height:100%;
+	}
 
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1000px){
-	.col-sm-3{
-		min-width: 270px;
+	.content iframe{
+		height: 100%;
 	}
 }
 
 @media (max-width: 768px){
-	.one-row{
-		height: auto;
-	}
-
 	.navbar-collapse{
 		position: absolute;
 		z-index: 1000;
@@ -63,6 +55,19 @@ body{
 
 	.col-sm-3{
 		min-width: 240px;
+	}
+
+	.content iframe{
+		height: 100%!important;
+		position: fixed;
+		top: 50px;
+		width:100%;
+		border: 1px solid red;
+		margin: 0 auto;
+		right: 0;
+		padding-bottom:50px;
+		overflow-y: scroll;
+		overflow-x: hidden;
 	}
 }
 
