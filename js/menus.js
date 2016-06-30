@@ -234,5 +234,6 @@ define(['zepto', 'ajax', 'fx'], function($){
 		});
 	};
 
-	console.log('test')
+	console.log('test1')
+	//console.log('test2')
 });
