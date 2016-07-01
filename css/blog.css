@@ -24,8 +24,8 @@ a,a:hover, a:active,a:visited{
 	text-decoration: none;
 }
 
-a:hover, a:active, a:visited{
-	color:#333;
+a:hover, a:active{
+	color:#ff4088;
 }
 
 
@@ -84,7 +84,6 @@ em:before{
 .border-b{
 	border: 1px dotted #333;
 	padding: 1rem 0 1rem 1rem;
-	margin-left: -0.6rem;
 	color: #ff4088;
 }
 

@@ -10,8 +10,6 @@ var uglify = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-//var gulpSequence = require('gulp-sequence');
-
 //清除上一次发布内容
 gulp.task('clean', function(){
 
