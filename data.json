@@ -3,9 +3,9 @@
 	{"title":"Heart", "class":"heart","href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Comments", "class":"comments", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Cubes", "class":"cubes", "href": "./blog.html", "target":"mainCnt"}, 
-	{"title":"Road", "class":"road",
+	{"title":"React", "class":"road",
 		"subs":[
-			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
+			{"title":"轮播","href": "./blog.html", "target":"mainCnt"},
 			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
 			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
 		]
