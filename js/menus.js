@@ -233,7 +233,4 @@ define(['zepto', 'ajax', 'fx'], function($){
 			error: _settings.error || _onErrorData 
 		});
 	};
-
-	console.log('test1')
-	//console.log('test2')
 });
