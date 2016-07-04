@@ -56,6 +56,8 @@ gulp.task('server', ['compressJS'], function(){
 		console.log('client JS have change, file path is ' + event.path );
 	});
 
+	gulp.watch('./*.html', reload);
+	gulp.watch('./css/*.css', reload);
 });
 
 gulp.task('default', ['server']);

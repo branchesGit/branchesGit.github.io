@@ -1,0 +1,120 @@
+html,body,div,ul,li,p,h1,h2,
+h3,h4,h5,h6{
+	margin:0;
+	padding:0;
+}
+
+html,body{
+	width:100%;
+	font-size: 10px;
+	height:100%;
+	overflow: hidden;
+}
+
+li,dl{
+	list-style: none;
+}
+
+
+.page{
+	width: 90%;
+	margin: 0 auto;
+	border: 1px solid red;
+	height: 100%;
+	position:relative;
+}
+
+.self-info{
+	padding-top: 1rem;
+}
+.self{
+	padding: 1rem 1rem 2rem 1rem;
+	border: .2rem solid gray;
+	margin-right: .6rem;
+	float:left;
+}
+
+.self img{
+	width: 8rem;
+	height: 8rem;
+	display: block;
+}
+
+.selfInfo{
+	font-size: 1.36rem;
+}
+
+.tp{
+	padding-top: 1rem;
+
+}
+
+.page{
+	background-image: url(./images/self.jpg) no-repeat;
+	background-size: cover;
+}
+
+.pd{
+	padding-left: 2.4rem;
+}
+
+.b-info{
+	position: absolute;
+	bottom: 3rem;
+	left:0;
+}
+
+.b-info ul{
+	float: left;
+}
+
+.b-info li{
+	font-size: 1.06rem;
+	overflow:hidden;
+	margin: 0.6rem .5rem;
+	float: left;
+	padding: 0 .5rem;
+}
+
+.b-info li span, .b-info li i{
+	float: left;
+}
+
+.icon{
+	background-size:cover;
+	width:1.2rem;
+	height:1.2rem;
+	margin-right: .4rem;
+}
+
+.smile-icon{
+	background-image: url(./images/smile.png);
+	
+}
+
+.age-icon{
+	background-image: url(./images/remind.png);
+}
+
+.educate-icon{
+	background-image: url(./images/book.png);
+}
+
+
+.major-icon{
+	background-image: url(./images/book.png);
+}
+
+
+.location-icon{
+	background-image: url(./images/seat.png);
+}
+
+
+.email-icon{
+	background-image: url(./images/book.png);
+}
+
+.tel-icon{
+	background-image: url(./images/book.png);
+}
