@@ -126,6 +126,7 @@ li,dl{
 
 .b-info ul{
 	overflow: hidden;
+	max-width: 28rem;
 }
 
 .self-info{
