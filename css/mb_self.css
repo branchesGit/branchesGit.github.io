@@ -251,11 +251,24 @@ li,dl{
 
 .animated {
 	animation-name: infinite-animated;
-	animation-duration: 3s;
+	-webkit-animation-name: infinite-animated;
+	animation-duration: 2.7s;
+	-webkit-animation-duration: 2.7s;
+	-webkit-animation-iteration-count:infinite;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function:ease-in-out;
 	animation-fill-mode: both;
 }
+
+@-webkit-keyframes infinite-animated{
+	0%{
+		transform: translate3d(0, -5px,0);
+	}	
+	100%{
+		transform: translate3d(0, 0,0);
+	}
+
 
 @keyframes infinite-animated{
 	0%{
