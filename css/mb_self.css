@@ -223,13 +223,16 @@ li,dl{
 
 
 .email-icon{
-	background-image: url(./images/book.png);
+	background-image: url(./images/email.png);
 }
 
 .tel-icon{
-	background-image: url(./images/book.png);
+	background-image: url(./images/tel.png);
 }
 
+.sale-icon{
+	background-image: url(./images/sale.png);
+}
 
 .tbtn{
 	position: absolute;
