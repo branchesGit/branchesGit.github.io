@@ -94,7 +94,7 @@ require(['touch','fx'], function($){
 			$page.addClass('current')
 				.css({"transform":"translate3d(0," + h + "px,0)"});
 			$page.animate({"transform":
-				"translate3d(0,0,0)"}, 500, 'ease-in', function(){
+				"translate3d(0,0,0)"}, 800, 'ease-in', function(){
 					isAnimating = false;
 				});
 		}, 
@@ -106,7 +106,7 @@ require(['touch','fx'], function($){
 			$page.addClass('current')
 				.css({"transform":"translate3d(0," + h + "px,0)"});
 			$page.animate({"transform":
-				"translate3d(0,0,0)"}, 500, 'ease-in', function(){
+				"translate3d(0,0,0)"}, 800, 'ease-in', function(){
 					isAnimating = false;
 				});
 
@@ -130,7 +130,7 @@ require(['touch','fx'], function($){
 			
 			$page.css({"transform":"translate3d(0," + h + "px,0)"});
 			$page.animate({"transform":
-				"translate3d(0,0,0)"}, 500, 'ease-in',function(){
+				"translate3d(0,0,0)"}, 800, 'ease-in',function(){
 				isAnimating = false;
 				$page.addClass('current');
 			});
