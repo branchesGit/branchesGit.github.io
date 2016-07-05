@@ -406,17 +406,27 @@ li,dl{
 	font-size: 1.26rem;
 }
 
+.more ul{
+	overflow: hidden;
+	margin-right: 1rem;
+	float:left;
+}
+
  .more li{
  	line-height: 1.6;
-
+ 	letter-spacing: 0.03rem;
+ 	padding: .5rem;
+ 	border-bottom: 1px dotted #ff4408;
+ 	float: left;
+ 	clear:both;
  }
 
  .more a{
  	text-decoration: none;
  	padding: .5rem;
- 	background-color: #ff4408;
- 	color: #fff;
- 	border-radius: .5rem;
+ 	color: #ff4408;
+ 	text-transform: uppercase;
+
  }
 
  .more span{
@@ -424,6 +434,7 @@ li,dl{
  }
 
  .more p{
+ 	font-size: 1.3rem;
  	margin-top: 1rem;
  	letter-spacing: 0.03rem;
  }
