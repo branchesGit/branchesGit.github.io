@@ -1,6 +1,6 @@
 [
 	{"title":"Gulp", "class":"download", "href": "./blog.html", "target":"mainCnt"}, 
-	{"title":"自述（手机）", "class":"heart","href": "./mb_self.html", "target":"mainCnt"}, 
+	{"title":"自述（手机）", "class":"heart","href": "./branches.html", "target":"mainCnt"}, 
 	{"title":"Comments", "class":"comments", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"Cubes", "class":"cubes", "href": "./blog.html", "target":"mainCnt"}, 
 	{"title":"React", "class":"road",
