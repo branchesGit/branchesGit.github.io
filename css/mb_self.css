@@ -49,6 +49,32 @@ li,dl{
 	animation-name: fly-t-l;
 }
 
+@-webkit-keyframes fly-t-l{
+	0%{
+		transform:translate3d(-300rem, 0,0);
+		opacity: 0;
+	}
+
+
+	100%{
+		transform:translate3d(0, 0,0);
+		opacity: 0.8;
+	}
+}
+
+
+@-webkit-keyframes fly-t-r{
+	0%{
+		transform:translate3d(300rem, 0,0);
+		opacity: 0;
+	}
+
+	100%{
+		transform:translate3d(0, 0,0);
+		opacity: 0.8;
+	}
+}
+
 @keyframes fly-t-l{
 	0%{
 		transform:translate3d(-300rem, 0,0);
@@ -327,4 +353,11 @@ li,dl{
  	color: #ff4408;
  	margin: 1rem 0;
  	font-size: 1.8rem;
+ }
+
+ .op-ani{
+ 	animation-name: op-ani;
+ 	opacity: 0;
+ 	animation-delay: 2s;
+
  }
