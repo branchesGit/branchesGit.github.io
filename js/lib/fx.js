@@ -55,6 +55,7 @@
   }
 
   $.fn.anim = function(properties, duration, ease, callback, delay){
+    debugger;
     var key, cssValues = {}, cssProperties, transforms = '',
         that = this, wrappedCallback, endEvent = $.fx.transitionEnd,
         fired = false

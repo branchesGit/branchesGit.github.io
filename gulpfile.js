@@ -14,7 +14,7 @@ var reload = browserSync.reload;
 gulp.task('clean', function(){
 
 	return gulp.src('./dist')
-			.pipe( clean({force:true}) );
+			.pipe( clean() );
 });
 
 //压缩第三方库
@@ -31,7 +31,7 @@ gulp.task('compressLibJS', function(cb){
 //压缩客户端JS
 gulp.task('compressClientJS', function(cb){
 	return gulp.src('./js/*.js')
-		.pipe( uglify() )
+		//.pipe( uglify() )
 		.pipe( gulp.dest('./dist') );
 });
 

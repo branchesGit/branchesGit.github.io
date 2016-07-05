@@ -8,6 +8,8 @@ html,body{
 	width:100%;
 	font-size: 10px;
 	overflow: hidden;
+	font-family: '微软雅黑';
+	-webkit-tap-highlight-color:transparent;
 }
 
 li,dl{
@@ -16,10 +18,80 @@ li,dl{
 
 
 .page{
-	width: 90%;
 	margin: 0 auto;
-	height: 100%;
 	position:relative;
+	opacity: 1;
+	display: none;
+	max-width: 48rem;
+	width:90%;
+}
+
+.current{
+	opacity: 1;
+	display: block;
+}
+
+
+.current .fly-t-r, .current .fly-t-l, .current .odd, .current .even{
+	animation-duration: 0.6s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-out;
+	opacity: 0;
+}
+
+.current .fly-t-r{
+	animation-name: fly-t-r;
+	animation-delay: 0.2s;
+}
+
+
+.current .fly-t-l{
+	animation-name: fly-t-l;
+}
+
+@keyframes fly-t-l{
+	0%{
+		transform:translate3d(-300rem, 0,0);
+		opacity: 0;
+	}
+
+
+	100%{
+		transform:translate3d(0, 0,0);
+		opacity: 0.8;
+	}
+}
+
+
+@keyframes fly-t-r{
+	0%{
+		transform:translate3d(300rem, 0,0);
+		opacity: 0;
+	}
+
+	100%{
+		transform:translate3d(0, 0,0);
+		opacity: 0.8;
+	}
+}
+
+
+.current .fly-b li{
+	animation-name: fly-b;
+	animation-duration: 0.6s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-out;
+}
+
+@keyframes fly-b{
+	0%{
+		transform: translate3d(250rem,0,0);
+		opacity: 0;
+	}
+	100%{
+		transform: translate3d(0,0,0);
+		opacity: 0.9;
+	}
 }
 
 .self-info{
@@ -116,3 +188,143 @@ li,dl{
 .tel-icon{
 	background-image: url(./images/book.png);
 }
+
+
+.tbtn{
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	width: 10rem;
+}
+
+.tbtn a{
+	position: relative;
+	left: -50%;
+	width: 10rem;
+	display: block;
+	height: 2rem;
+	background-image: url(./images/up_arrow.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.animated {
+	animation-name: infinite-animated;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+
+
+.company{
+	box-shadow: .4rem .3rem .3rem #ccc;
+	letter-spacing: 0.04rem;
+	margin: 1rem 0;
+	padding: 0.7rem 0.5rem;
+}
+
+.company h1{
+	text-align: center;
+	font-size: 1.56rem;
+	margin: 0.7rem 0;
+	letter-spacing: 0.08rem;
+}
+
+.c1 li{
+	margin: 0.5rem 0;
+}
+
+.time{
+	color: #ff4408;
+	font-size: 1.16rem;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+.current .com-ani{
+	animation-name: company-ani;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes company-ani{
+	0%{
+		transform: translate3d(200rem,0,0);
+	}
+	100%{
+		transform: translate3d(0,0,0);
+	}
+}
+
+.current .rotate5{
+	animation-name: rotate-ani;
+	animation-duration: .5s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate-ani{
+	0%{
+		transform: rotate(30deg);
+		-webkit-transform: rotate(30deg);
+	}
+	100%{
+		transform: rotate(0);
+		-webkit-transform: rotate(0);
+	}
+}
+
+.company:active{
+	transition: all .2s ease-in-out;
+	transform: scale3d(1.1);
+}
+
+.current .skills li.odd{
+	animation-name: flyv-t-r;
+}
+
+.current .skills li.even{
+	animation-name: flyv-t-l;
+}
+
+ @keyframes flyv-t-r{
+ 		0%{
+		transform: translate3d(200rem,0,0);
+		opacity: 0;
+	}
+	100%{
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+ }
+
+  @keyframes flyv-t-l{
+ 		0%{
+		transform: translate3d(-200rem,0,0);
+		opacity: 0;
+	}
+	100%{
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+ }
+
+ .skills li{
+ 	font-size: 1.16rem;
+ 	line-height: 2;
+ 	margin-left: 1rem;
+ }
+
+ .skills li span{
+ 	font-weight: bold;
+ 	color: #ff4408;
+ }
+
+ .pskill h1{
+ 	color: #ff4408;
+ 	margin: 1rem 0;
+ 	font-size: 1.8rem;
+ }

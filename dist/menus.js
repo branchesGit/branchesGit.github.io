@@ -1,1 +1,236 @@
-define(["zepto","ajax","fx"],function(e){function a(){var a=d.oData,s=d.$elem,t=1;a&&s.each(function(){e(this).children().each(function(){e(this).remove()}),e(this).addClass(d.klass),e(this).append(i(t,d.oData))})}function s(){var a=d.$elem;a.each(function(){e(this).children().each(function(){e(this).remove()})})}function t(){var a=d.$elem;a.on("click",function(s){var t,l=s.target,n=e(l).closest("li"),i=n.find("a").eq(0),c=n.data("level"),r=n.data("index"),u=n.data("close");o(u,n),void 0!==u||c===d.selectLevel&&r===d.selectIndex||(a.find(".select").each(function(){e(this).removeClass("select")}),i.addClass("select"),t=n.parents("li"),a.find("li").each(function(){void 0!==e(this).data("sub-select")&&(e(this).data("sub-select","0"),e(this).removeClass("sub-select-close"))}),t.length&&t.data("sub-select","1")),d.selectIndex=r,d.selectLevel=c;var h=n.find("ul");if(1===u){n.removeClass(d.closeKlass).addClass(d.openItemKlass),n.data("close","0"),h.removeClass("hidden"),h.css({height:0});var v=36*h.find("li").length;h.animate({height:v+"px"},300,"ease-out",function(){h.css({height:"auto"})}),1===parseInt(n.data("sub-select"),10)&&n.removeClass("sub-select-close"),d.openItem=n}else if(0===u){n.removeClass(d.openItemKlass).addClass(d.closeKlass),n.data("close","1");var v=36*h.find("li").length;h.css({height:v+"px"}),h.animate({height:0},300,"ease-out",function(){}),1===parseInt(n.data("sub-select"),10)&&n.addClass("sub-select-close")}})}function l(e){d.loadedData=!0,d.oData=e,a(),t()}function n(e){d.loadedData=!1,d.oData=null,s()}var d={mutils:!1,url:"./data.json",success:null,error:null,loadedData:!1,$elem:null,rightKlass:"arrow right",klass:"branches-menu",hidden:"hidden",itemKlass:"item",itemTKlass:"menu-title",selectLevel:"1",selectIndex:"1",openItem:null,closeKlass:"item-colse",openItemKlass:"item-open"};e.fn.Menus=function(a){d=e.extend({},d,a),d.$elem=this,r()};var i=function(a,s){var t=e("<ul></ul>");return 1!==a?t.addClass(d.hidden):t.addClass("nav navbar-nav"),e.each(s,function(e,s){t.append(c(a,e,s))}),t},c=function(a,s,t){var l=e("<li></li>");l.data("level",a).data("index",s).addClass(d.itemKlass),1===a&&0===s&&l.addClass("item-first");var n=e('<a href="'+(t.href||"javascript:void(0);")+'" target="'+(t.target||"_blank")+'"> </a>'),c=e("<span>"+t.title+"</span>");if(c.addClass(d.itemTKlass),1===a){var o=e('<i class="menu-icon"></i>');n.append(o)}return n.addClass(t["class"]).append(c),l.append(n),t.subs&&(n.append(e('<span class="'+d.rightKlass+'"></span>')),l.append(i(++a,t.subs)),l.data("close","1")),l},o=function(e,a){var s=d.openItem;s&&(a.data("level")===s.data("level")&&a.data("index")===s.data("index")||void 0!==e&&(s.removeClass(d.openItemKlass).addClass(d.closeKlass),s.data("close","1"),s.find("ul").addClass("hidden"),1===parseInt(s.data("sub-select"),10)&&s.addClass("sub-select-close")))},r=function(){var a=d.url;a=a.indexOf("?")!==-1?a.replace("?","?time="+ +new Date)+"&":a+"?time="+ +new Date,e.ajax({url:a,data:d.data||{},dataType:"json",success:d.success||l,error:d.error||n})}});
+/*
+	AMD: 异步加载
+*/
+
+define(['zepto', 'ajax', 'fx'], function($){
+	//配置信息
+	var _settings = {
+		mutils:false,
+		url:'./data.json',
+		success: null,
+		error: null,
+		loadedData: false,
+		$elem: null, 
+		rightKlass: 'arrow right',
+		klass: 'branches-menu',
+		hidden: 'hidden',
+		itemKlass: 'item',
+		itemTKlass: 'menu-title',
+		selectLevel: "1",
+		selectIndex:"1",
+		openItem: null,
+		closeKlass: 'item-colse',
+		openItemKlass: 'item-open'
+	};
+
+	$.fn.Menus = function( options ){
+		_settings = $.extend( {}, _settings, options );
+
+		_settings.$elem = this;
+		//加载数据，并渲染元素
+		_loadMenusData();
+
+	}; 
+
+
+	function _handleMenu(){
+		var data = _settings.oData,
+			$elem = _settings.$elem;
+
+		var level = 1;
+		if( data ){
+			$elem.each(function(){
+				$(this).children().each(function(){
+					$(this).remove();
+				});
+
+				$(this).addClass( _settings.klass );
+				$(this).append( _createUL( level, _settings.oData ) )
+			});
+		}
+	}
+
+	var _createUL = function( level, datas ){
+		var $ul = $("<ul></ul>");
+
+		if( level !== 1 ){
+			$ul.addClass( _settings.hidden );
+		} else {
+			$ul.addClass("nav navbar-nav");
+		}
+
+		$.each( datas, function( idx,data ){
+			$ul.append( _createLI( level, idx, data) );
+		});
+
+		return $ul;
+	};
+
+	var _createLI = function( level,idx, data ){
+		var $li = $("<li></li>");
+		$li.data('level', level)
+			 .data("index", idx)
+			 .addClass(_settings.itemKlass);
+
+		if( level === 1 && idx === 0 ){
+			$li.addClass('item-first');
+		}
+		var $a = $('<a href="' + (data.href || "javascript:void(0);" ) + '" target="' + ( data.target || "_blank" )  + '"> </a>');
+		var $span = $('<span>' + data.title + '</span>');
+		$span.addClass( _settings.itemTKlass );
+		if( level === 1 ){
+			var $i = $('<i class="menu-icon"></i>');
+			$a.append( $i );
+		}
+
+		$a.addClass( data.class ).append( $span );
+		$li.append( $a );
+
+		if( data.subs ){
+			$a.append( $('<span class="' + _settings.rightKlass + '"></span>') );
+			$li.append( _createUL( ++level, data.subs ) );
+			$li.data('close',"1");
+		}
+
+		return $li;
+	}
+
+	function _removeMenu(){
+		var $elem = _settings.$elem;
+
+		$elem.each(function(){
+			$(this).children().each(function(){
+				$(this).remove();
+			});
+		})
+	}
+
+	var _closeSubMenu = function( iClose, $openLi ){
+		//关闭展开项
+		var $item = _settings.openItem;
+		
+		if( !$item ){
+			return;
+		}
+
+		if( $openLi.data('level') === $item.data('level') && 
+			$openLi.data('index') === $item.data('index') ){
+			return;
+		}
+	
+		if( iClose !== undefined ){
+			
+			$item.removeClass(_settings.openItemKlass).addClass(_settings.closeKlass);
+			$item.data('close','1');
+			$item.find("ul").addClass('hidden');
+
+			if( parseInt( $item.data("sub-select"), 10) === 1 ){
+				$item.addClass('sub-select-close');
+			}
+		}
+	}
+
+	function _handleSelectMenu(){
+		var $elem = _settings.$elem;
+		
+		$elem.on('click', function( e ){
+			var elem = e.target,
+				$li = $(elem).closest('li'),
+				$a = $li.find("a").eq(0),
+				level = $li.data("level"),
+				index = $li.data('index'),
+				iClose = $li.data("close"),
+				$parentLi;
+
+			_closeSubMenu(iClose, $li);
+
+			if( iClose === undefined && (level !== _settings.selectLevel 
+				|| index !== _settings.selectIndex) ){
+
+				$elem.find(".select").each(function(){
+					$(this).removeClass("select");
+				});
+
+				 $a.addClass("select");
+
+				$parentLi = $li.parents('li');
+
+				$elem.find("li").each(function(){
+					if( $(this).data("sub-select") !== undefined ){
+						$(this).data("sub-select", "0");
+						$(this).removeClass('sub-select-close');
+					}
+				});
+
+				if( $parentLi.length ){
+					$parentLi.data('sub-select',"1");
+				}
+			}
+
+			_settings.selectIndex = index;
+			_settings.selectLevel = level;
+			
+			var $ul = $li.find("ul");
+
+			if( iClose === 1 ){
+				$li.removeClass(_settings.closeKlass).addClass(_settings.openItemKlass);
+				$li.data("close", '0');
+				$ul.removeClass("hidden");
+				$ul.css({"height": 0});
+				var h = $ul.find('li').length * 36;
+				$ul.animate({ "height": h + 'px'}, 300, 'ease-out', function(){
+					$ul.css({"height": "auto"});
+				})
+
+				if( parseInt( $li.data('sub-select'), 10) === 1 ){
+					$li.removeClass('sub-select-close');
+				}
+
+				_settings.openItem = $li;
+
+			} else if(iClose === 0) {
+				$li.removeClass(_settings.openItemKlass).addClass(_settings.closeKlass);
+				$li.data("close", '1');
+				var h = $ul.find("li").length * 36;
+				$ul.css( {'height': h + 'px'} );
+				$ul.animate({"height":0}, 300, 'ease-out', function(){
+					//$ul.addClass("hidden");
+				})
+
+				if( parseInt( $li.data('sub-select'), 10) === 1 ){
+					$li.addClass('sub-select-close');
+				}
+			}
+		});
+	}
+
+	function _onLoadedData( data ){
+		_settings.loadedData = true;
+		_settings.oData = data;
+
+		_handleMenu();
+
+		_handleSelectMenu();
+	}
+
+	function _onErrorData(data){
+		_settings.loadedData = false;
+		_settings.oData = null;
+
+		_removeMenu();
+	}
+
+	var _loadMenusData = function(){
+		var url = _settings.url;
+		url = url.indexOf("?") !== -1 ? url.replace("?", "?time=" + (+new Date)) + "&"
+				: url + "?time=" + (+new Date);
+
+		$.ajax({
+			url: url,
+			data: _settings.data || {},
+			dataType: 'json',
+			success: _settings.success || _onLoadedData ,
+			error: _settings.error || _onErrorData 
+		});
+	};
+});
