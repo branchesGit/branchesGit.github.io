@@ -41,12 +41,14 @@ li,dl{
 
 .current .fly-t-r{
 	animation-name: fly-t-r;
+	-webkit-animation-name:fly-t-r;
 	animation-delay: 0.2s;
 }
 
 
 .current .fly-t-l{
 	animation-name: fly-t-l;
+	-webkit-animation-name: fly-t-l;
 }
 
 @-webkit-keyframes fly-t-l{
