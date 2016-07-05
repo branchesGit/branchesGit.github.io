@@ -65,6 +65,7 @@ li,dl{
 
 .fly-b li{
 	float: left;
+	border: 1px solid red;
 }
 
 @-webkit-keyframes fly-t-r{
@@ -160,7 +161,7 @@ li,dl{
 
 .b-info{
 	position: absolute;
-	bottom: 4rem;
+	margin-top: 2rem;
 	left:0;
 }
 
