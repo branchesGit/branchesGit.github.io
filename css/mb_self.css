@@ -63,6 +63,10 @@ li,dl{
 }
 
 
+.fly-b li{
+	float: left;
+}
+
 @-webkit-keyframes fly-t-r{
 	0%{
 		transform:translate3d(300rem, 0,0);
