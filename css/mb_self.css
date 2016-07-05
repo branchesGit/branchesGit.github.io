@@ -255,6 +255,14 @@ li,dl{
 	animation-fill-mode: both;
 }
 
+@keyframes infinite-animated{
+	0%{
+		transform: translate3d(0, -5px,0);
+	}	
+	100%{
+		transform: translate3d(0, 0,0);
+	}
+}
 
 .company{
 	box-shadow: .4rem .3rem .3rem #ccc;
