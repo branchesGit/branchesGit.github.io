@@ -125,6 +125,11 @@ li,dl{
 	}
 }
 
+.b-info ul{
+	border: 1px solid red;
+	overflow: hidden;
+}
+
 .self-info{
 	padding-top: 1rem;
 }
