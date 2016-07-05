@@ -360,7 +360,7 @@ li,dl{
  }
 
  .skills li{
- 	font-size: 1.16rem;
+ 	font-size: 1.2rem;
  	line-height: 2;
  	margin-left: 1rem;
  }
@@ -376,9 +376,54 @@ li,dl{
  	font-size: 1.8rem;
  }
 
- .op-ani{
+ .current .op-ani{
  	animation-name: op-ani;
  	opacity: 0;
  	animation-delay: 2s;
+ 	animation-duration: 0.49s;
+ 	animation-fill-mode: both;
+ }
 
+ @keyframes op-ani{
+ 	0%{
+ 		opacity: 0;
+ 	}
+ 	100%{
+ 		opacity: 1;
+ 	}
+ }
+
+ .more h1{
+ 	text-indent: -200rem;
+ 	width:1.6rem;
+ 	height:1.6rem;
+ 	background-image: url(./images/more.png);
+ 	background-repeat: no-repeat;
+ 	background-size: cover cover;
+ }
+
+.more{
+	font-size: 1.26rem;
+}
+
+ .more li{
+ 	line-height: 1.6;
+
+ }
+
+ .more a{
+ 	text-decoration: none;
+ 	padding: .5rem;
+ 	background-color: #ff4408;
+ 	color: #fff;
+ 	border-radius: .5rem;
+ }
+
+ .more span{
+ 	padding-left: 0.5rem;
+ }
+
+ .more p{
+ 	margin-top: 1rem;
+ 	letter-spacing: 0.03rem;
  }
