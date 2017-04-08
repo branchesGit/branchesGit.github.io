@@ -57,6 +57,7 @@ gulp.task('server', ['compressJS'], function(){
 	});
 
 	gulp.watch('./*.html', reload);
+	gulp.watch('./es-cores/*.html', reload);
 	gulp.watch('./css/*.css', reload);
 });
 
