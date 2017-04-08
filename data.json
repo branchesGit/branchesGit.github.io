@@ -14,7 +14,8 @@
 		"subs":[
 			{"title":"Introduction","href": "./blog.html", "target":"mainCnt"},
 			{"title":"QuickStart","href": "./blog.html", "target":"mainCnt"},
-			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"}
+			{"title":"Installing Hugo","href": "./blog.html", "target":"mainCnt"},
+			{"title":"requireJS","href": "./requireJS.html", "target":"mainCnt"}
 		]
 	},
 		{"title":"BootStrap", "class":"road",
